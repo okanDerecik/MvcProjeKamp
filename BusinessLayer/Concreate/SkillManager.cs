@@ -44,9 +44,5 @@ namespace BusinessLayer.Concreate
             _skillDal.Update(skill);
         }
 
-        Admin ISkillService.GetByID(int id)
-        {
-            throw new NotImplementedException();
-        }
     }
 }

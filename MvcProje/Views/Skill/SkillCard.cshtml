@@ -1,0 +1,62 @@
+﻿@using EntityLayer.Concreate
+@model List<Skill>
+
+@{
+    ViewBag.Title = "SkillCard";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+
+<body>
+    <!-- main -->
+    <div class="main">
+        <h1>Yetenek Kartı Sayfam</h1>
+        <div class="main-info w3l">
+            <div class="main-row">
+                <!-- main-row-one -->
+                <div style="text-align:center">
+                    <a href="/Skill/AddSkill" class="btn btn-secondary" style="color:black;border:1px solid;padding:4px;background-color:azure"> Yeni Yetenek Ekle</a>
+                </div>
+                <br />
+                <h3 class="title">Yetenekler</h3>
+                <table class="table table-bordered">
+                    <tr>
+                        <th>#</th>
+                        <th>YETENEK ADI</th>
+                        <th>YETENEK DEĞERİ</th>
+                        <th>GÜNCELLE</th>
+                        <th>SİL</th>
+                    </tr>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <th>@item.SkillID</th>
+                            <td>@item.SkillName</td>
+                            <td>@item.SkillRange</td>
+                            <td><a href="/Skill/EditSkill/@item.SkillID" class="btn btn-warning">Güncelle</a></td>
+                            <td><a href="/Skill/DeleteSkill/@item.SkillID" class="btn btn-danger">Sil</a></td>
+                        </tr>
+                    }
+
+                </table>
+            </div>
+            <!--bar-js-->
+            <script src="~/AdminLTE-3.0.4/web/js/bars.js"></script>
+            
+            
+        </div>
+    </div>
+    <!-- copyright -->
+    
+    <!-- main -->
+
+    <script src="~/Scripts/bootstrap.min.js"></script>
+
+    <script src="~/AdminLTE-3.0.4/dist/js/adminlte.js"></script>
+    <script src="~/AdminLTE-3.0.4/plugins/chart.js/Chart.min.js"></script>
+    <script src="~/AdminLTE-3.0.4/dist/js/demo.js"></script>
+    <script src="~/AdminLTE-3.0.4/dist/js/pages/dashboard3.js"></script>
+</body>
+</html>
+

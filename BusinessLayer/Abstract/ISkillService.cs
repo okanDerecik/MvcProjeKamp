@@ -13,6 +13,6 @@ namespace BusinessLayer.Abstract
         void SkillAdd(Skill skill);
         void SkillDelete(Skill skill);
         void SkillUpdate(Skill skill);
-        Admin GetByID(int id);
+        Skill GetByID(int id);
     }
 }
